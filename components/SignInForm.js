@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
 import { FormLabel, FormInput, Button} from 'react-native-elements';
+import KeyboardSpacer from 'react-native-keyboard-spacer';
 import axios from 'axios';
 import firebase from 'firebase';
 
@@ -33,17 +34,21 @@ class SignInForm extends Component {
                 <FormLabel>Enter Phone Number</FormLabel>
                 <FormInput
                     value={this.state.phone}
-                    onChangeText={phone => this.setState({ phone })} />
+                    onChangeText={phone => this.setState({ phone })} 
+                    />     
                 </View>
                 <View style={{ marginBottom: 10 }}>
                 <FormLabel>Enter Code</FormLabel>
                 <FormInput
                     value={this.state.code}
-                    onChangeText={code => this.setState({ code })} />
+                    onChangeText={code => this.setState({ code })} 
+                    />
+                  
                 </View>
                 <Button 
                     onPress={this.handleSubmit}
                     title="Submit" />
+                <KeyboardSpacer />  
             </View>
         );
     }
